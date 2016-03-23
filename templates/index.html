@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RadioSheva online</title>
+	<link rel="stylesheet" type="text/css" href="static/main.css">
+	<script type="text/javascript">
+		'use strict';
+
+		function toggle_selection(node, pos, enter) {
+			if(enter)
+				node.src = `static/img/soc_a${pos}.png`;
+			else
+				node.src = `static/img/soc_${pos}.png`;
+		}
+
+	</script>
+
+	<script type="text/javascript">
+		'use strict';
+
+		var player = null;
+		var cached_data = {% if data %}"{{ data }}"{% else %} undefined {% endif%}
+
+		function toggle_music(node) {
+			player = player || document.getElementById("player_eng");
+			if(player.paused) {
+				node.src = "static/img/btn_pause.png";
+				player.play();
+			} else {
+				node.src = "static/img/btn_play.png";
+				player.pause();
+			}
+		}
+
+
+		function update_song_meta() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (xhttp.readyState == 4 && xhttp.status == 200) {
+					console.log(xhttp.responseText);
+				 	cached_data = JSON.parse(xhttp.responseText).current.name;
+				 	display_cached_data();
+				}
+			};
+			xhttp.open("GET", "/live-info", true);
+			xhttp.send();
+		}
+
+		function display_cached_data() {
+		 	var info = cached_data.split(/(.+) (- .+)/);
+		 	document.getElementsByClassName("band")[0].innerHTML = info[1];
+		 	document.getElementsByClassName("track")[0].innerHTML = info[2];
+		}
+
+		function init_page() {
+			display_cached_data();
+			setInterval(update_song_meta, 5000);
+		}
+
+	</script>
+</head>
+<body>
+	<div class=root>
+		<img id=logo src="static/img/logo.png">
+
+		<div id="player" onload="init_page">
+			<img class="btn" id="toggle_play" src="static/img/btn_play.png" onclick="toggle_music(this)" >
+			<audio id=player_eng>
+				<source
+					src="http://radiosheva.univ.kiev.ua/live"
+					type="audio/mpeg"
+					onload="console.log('onload')">
+				 Your browser does not support the <code>audio</code> element.
+			</audio>
+			<p class=band></p>
+			<p class=track></p>
+		</div>
+
+		<div>
+			<img class="soc btn" src="static/img/soc_0.png"
+				onmouseenter="toggle_selection(this, 0, true)"
+				onmouseleave="toggle_selection(this, 0, false)"
+				onclick="window.open('http://vk.com/', '_self')">
+			<img class="soc btn" src="static/img/soc_1.png"
+				onmouseenter="toggle_selection(this, 1, true)"
+				onmouseleave="toggle_selection(this, 1, false)"
+				onclick="window.open('http://facebook.com/', '_self')">
+			<img class="soc btn" src="static/img/soc_2.png"
+				onmouseenter="toggle_selection(this, 2, true)"
+				onmouseleave="toggle_selection(this, 2, false)"
+				onclick="window.open('http://twitter.com/', '_self')">
+			<img class="soc btn" src="static/img/soc_3.png"
+				onmouseenter="toggle_selection(this, 3, true)"
+				onmouseleave="toggle_selection(this, 3, false)"
+				onclick="window.open('mailto:test@example.com', '_self')">
+		</div>
+	</div>
+	<script type="text/javascript">
+		init_page();
+	</script>
+</body>
+</html>
