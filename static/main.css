@@ -4,6 +4,10 @@ body {
     background-color: #F4F4F4
 }
 
+a {
+    text-decoration: none;
+}
+
 div.root {
     margin: 10vh auto 5vh;
     text-align: center;
@@ -19,30 +23,31 @@ div.root {
 }
 
 div#player {
-    width: 270px;
-    height: 50px;
+    width: 330px;
+    height: 60px;
     background-color: #FFF;
     margin: 5vh auto
 }
 
 div#player>* {
-    max-height: 40px;
+    max-height: 45px;
     margin: 0;
     text-align: left
 }
 
 img#toggle_play {
     display: inline-block;
-    margin: 10px 5px 10px 8px;
-    height: 30px;
+    margin: 7px 5px 10px 10px;
+    /*height: 30px;*/
     float: left
 }
 
 #player>p.band {
     background-color: #c5011e;
-    height: 20px;
-    width: 233px;
-    margin-left: 35px;
+    height: 1.2em;
+    font-size: 1.4em;
+    width: 277px;
+    margin-left: 50px;
     padding-left: 2px;
     color: #FFF;
     font-weight: 500
@@ -50,9 +55,10 @@ img#toggle_play {
 
 #player>p.track {
     text-align: left;
-    margin-left: 40px;
+    margin-left: 60px;
     margin-top: 4px;
-    font-weight: 400
+    font-size: 1.2em;
+    font-weight: 400;
 }
 
 img.soc {
