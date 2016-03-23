@@ -5,6 +5,7 @@
 # for details.
 application: radio-sheva-preview
 runtime: python27
+version: 1
 api_version: 1
 threadsafe: yes
 
