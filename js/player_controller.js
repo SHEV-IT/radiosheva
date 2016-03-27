@@ -1,6 +1,7 @@
 'use strict';
 
 var player = null;
+var api_link = "http://radio.knu.ua/airtime.php"; // TODO: set valid link to
 
 function toggle_music(node) {
     player = player || document.getElementById("player_eng");
@@ -22,7 +23,7 @@ function update_song_meta() {
             display_cached_data();
         }
     };
-    xhttp.open("GET", "/live-info", true);
+    xhttp.open("GET", api_link, true);
     xhttp.send();
 }
 
