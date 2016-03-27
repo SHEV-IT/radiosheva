@@ -6,10 +6,10 @@ var api_link = "http://radio.knu.ua/airtime.php"; // TODO: set valid link to
 function toggle_music(node) {
     player = player || document.getElementById("player_eng");
     if (player.paused) {
-        node.src = "static/img/btn_pause.png";
+        node.src = "img/btn_pause.png";
         player.play();
     } else {
-        node.src = "static/img/btn_play.png";
+        node.src = "img/btn_play.png";
         player.pause();
     }
 }
