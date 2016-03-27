@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>RadioSheva online</title>
+    <link rel=stylesheet type=text/css href=css/main.css>
+    <script type=text/javascript>
+    function tog_btn(node, pos, enter) {
+        node.src = `img/soc_${(enter)?'a':''}${pos}.png`;
+    }
+    </script>
+    <script type=text/javascript src=js/player_controller.js></script>
+</head>
+
+<body>
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <div class=root> <img id=logo src=img/logo.png>
+        <div id=player onload=init_page> <img class=btn id=toggle_play src=img/btn_play.png onclick=toggle_music(this)>
+            <audio id=player_eng>
+                <source src=http://radiosheva.univ.kiev.ua/live type=audio/mpeg onload="console.log('onload')"> Your browser does not support the <code>audio</code> element. </audio>
+            <p class=band></p>
+            <p class=track></p>
+        </div>
+        <div>
+            <a href=http://vk.com/knuradio><img class="soc btn" src=img/soc_0.png onmouseenter="tog_btn(this, 0, true)" onmouseleave="tog_btn(this, 0, false)"></a>
+            <a href=http://facebook.com/knuradio><img class="soc btn" src=img/soc_1.png onmouseenter="tog_btn(this, 1, true)" onmouseleave="tog_btn(this, 1, false)"></a>
+            <a href=http://twitter.com/radioknu><img class="soc btn" src=img/soc_2.png onmouseenter="tog_btn(this, 2, true)" onmouseleave="tog_btn(this, 2, false)"></a>
+            <a href=mailto:radioknu@gmail.com><img class="soc btn" src=img/soc_3.png onmouseenter="tog_btn(this, 3, true)" onmouseleave="tog_btn(this, 3, false)"> </div>
+        </a>
+    </div>
+    <script type=text/javascript>
+    // Implicit call for boost of loading meta data of current song
+    var cached_data = undefined;
+    init_page();
+    </script>
+</body>
+
+</html>
