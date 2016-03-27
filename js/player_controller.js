@@ -19,7 +19,7 @@ function update_song_meta() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            cached_data = xhttp.responseText;
+            cached_data = JSON.parse(xhttp.responseText || "{}");
             display_cached_data();
         }
     };
