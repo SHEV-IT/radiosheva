@@ -14,12 +14,11 @@ function toggle_music(node) {
     }
 }
 
-
 function update_song_meta() {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            cached_data = JSON.parse(xhttp.responseText || "{}");
+            cached_data = JSON.parse(xhttp.responseText || "{}")["current"]["name"];
             display_cached_data();
         }
     };
