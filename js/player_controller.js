@@ -1,8 +1,7 @@
 'use strict';
 
 var player = null;
-var api_link = "http://radio.knu.ua/airtime.php"; // TODO: set valid link to
-
+var api_link = "/airtime.php";
 function toggle_music(node) {
     player = player || document.getElementById("player_eng");
     if (player.paused) {
