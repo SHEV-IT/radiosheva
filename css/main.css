@@ -18,7 +18,7 @@ div.root {
     -o-user-select: none
 }
 
-.btn:hover {
+.btn:hover a:hover {
     cursor: pointer
 }
 
@@ -60,8 +60,44 @@ img#toggle_play {
     font-weight: 400
 }
 
-img.soc {
+a.soc {
     width: 60px;
     height: 60px;
-    margin: 0 5px
+    margin: 0 5px;
+    background-size: 100%;
+    display: inline-block;
+}
+
+a#vk {
+    background-image: url(/img/soc_vk.png);
+}
+
+a#vk:hover {
+    background-image: url(/img/soc_vk_hover.png);
+}
+
+
+a#fb {
+    background-image: url(/img/soc_fb.png);
+}
+
+a#fb:hover {
+    background-image: url(/img/soc_fb_hover.png);
+}
+
+
+a#tw {
+    background-image: url(/img/soc_tw.png);
+}
+
+a#tw:hover {
+    background-image: url(/img/soc_tw_hover.png);
+}
+
+a#mail {
+    background-image: url(/img/soc_mail.png);
+}
+
+a#mail:hover {
+    background-image: url(/img/soc_mail_hover.png);
 }
