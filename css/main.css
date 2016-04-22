@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500&subset=latin,cyrillic-ext);
 body {
-    font-family: Roboto;
+    font-family:  Roboto, sans-serif;
     background-color: #f4f4f4
 }
 
@@ -41,10 +41,14 @@ img#toggle_play {
     float: left
 }
 
-#player>p.band {
+marquee {
+    display: block;
+}
+
+#player>marquee.band {
     background-color: #c5011e;
     height: 1.2em;
-    font-size: 1.4em;
+    font-size: 1.3em;
     width: 277px;
     margin-left: 50px;
     padding-left: 2px;
@@ -52,7 +56,7 @@ img#toggle_play {
     font-weight: 500
 }
 
-#player>p.track {
+#player>marquee.track {
     text-align: left;
     margin-left: 60px;
     margin-top: 4px;

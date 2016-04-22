@@ -25,8 +25,8 @@
         <div id=player onload=init_page> <img class=btn id=toggle_play src=img/btn_play.png onclick=toggle_music(this)>
             <audio id=player_eng>
                 <source src=http://radio.knu.ua/live type=audio/mpeg onload="console.log('onload')"> Your browser does not support the <code>audio</code> element. </audio>
-            <p class=band></p>
-            <p class=track></p>
+            <marquee class=band scrollamount="3"></marquee>
+            <marquee class=track scrollamount="3" ></marquee>
         </div>
         <div>
             <a id="vk" class="soc" target="blank" href="http://vk.com/knuradio"></a>
